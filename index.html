@@ -36,10 +36,14 @@
 <!-- <td><img src="stick.JPG" width="200" height="200" title="stick figure" alt="stick figure" ...></td> -->
 <center>
 <table class="image">
-		<caption align="bottom">As I look out over the distance <br>
-Beyond the mountains and hills afar <br>
-All I see is your splendor and beauty <br>
-You're always good and you're never far</caption>
+		<!-- <caption align="bottom">As I look out over the distance <br> -->
+<!-- Beyond the mountains and hills afar <br> -->
+<!-- All I see is your splendor and beauty <br> -->
+<!-- You're always good and you're never far</caption> -->
+		<caption align="bottom"><span id="caption-text">As I look out over the distance <br>
+		Beyond the mountains and hills afar <br>
+		All I see is your splendor and beauty <br>
+		You're always good and you're never far</span></caption>
 		<tr><td><img src="Jerry_mugshot.jpg" alt="stick" style="width:480px;height:270px;" </td></tr>
 </table>
 </center>
@@ -59,7 +63,52 @@ You're always good and you're never far</caption>
 		<p>
 			Once in a while<sup><a href="#fn1" id="ref1">&#42;</a></sup>, I write about my Christian faith<sup><a href="#fn2" id="ref2">&dagger;</a></sup> on my <a href="http://jerryluo8.wordpress.com/" target="_blank">WordPress</a>. 
 		<p>
-		<a href="http://biblehub.com/galatians/2-20.htm" target="_blank"><i>Galatians 2:20</i></a>
+		<!-- <a href="http://biblehub.com/galatians/2-20.htm" target="_blank"><i>Galatians 2:20</i></a> -->
+		<a id="verse-link" href="http://biblehub.com/galatians/2-20.htm" target="_blank"><i><span id="verse-text">Galatians 2:20</span></i></a>
+
+		<script>
+		const verses = [
+			{ text: "Galatians 2:20", url: "http://biblehub.com/galatians/2-20.htm" },
+			{ text: "Colossians 3:17", url: "http://biblehub.com/colossians/3-17.htm" },
+			{ text: "Philippians 4:6-7", url: "https://www.biblegateway.com/passage/?search=philippians%204%3A6-7&version=NIV" },
+			{ text: "Ephesians 3:16-19", url: "https://www.biblegateway.com/passage/?search=ephesians%203%3A16-19&version=NIV" },
+			{ text: "Psalm 23", url: "https://www.biblegateway.com/passage/?search=psalm%2023&version=NIV" },
+			{ text: "1 Thessalonians 5:16-18", url: "https://www.biblegateway.com/passage/?search=1%20Thessalonians%205%3A16-18&version=NIV" },
+			{ text: "Romans 12:12", url: "http://biblehub.com/romans/12-12.htm" },
+			{ text: "1 John 4:17", url: "http://biblehub.com/1_john/4-17.htm" }
+		];
+		
+		const captions = [
+			`As I look out over the distance <br>
+			Beyond the mountains and hills afar <br>
+			All I see is your splendor and beauty <br>
+			You're always good and you're never far`,
+			
+			`Another day has come and gone <br>
+			Another day has ended <br>
+			Another day you've seen me through <br>
+			Even in the unexpected`,
+			
+			`As I look out over the horizon <br>
+			Beyond the mountains across the sea <br>
+			I stand here in awe of your goodness <br>
+			Of all that you've done for me`,
+			
+			`You lead me up this mountain <br>
+			To the breath of the new frontier <br>
+			Though the road is long and windy <br>
+			I know you're with me here`
+		];
+
+		const randomIndex = Math.floor(Math.random() * verses.length);
+		const selected = verses[randomIndex];
+		document.getElementById('verse-text').textContent = selected.text;
+		document.getElementById('verse-link').href = selected.url;
+		
+		// Select random caption
+		const captionIndex = Math.floor(Math.random() * captions.length);
+		document.getElementById('caption-text').innerHTML = captions[captionIndex];
+		</script>
 		<hr> </hr>
 		<p>
 			Here are some relevant documents: 
@@ -132,7 +181,7 @@ You're always good and you're never far</caption>
 <sup id="fn1"><sup>&#42;</sup> Due to the fact that I usually have a lot of other things to do, it's quite difficult for me to find time to write regularly. As such, new writings will come out on a sporadic and infrequent basis. <a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></sup>
 
 <p>	
-<sup id="fn2"><sup>&dagger;</sup> As a Christian, my life is built up through faith in Jesus Christ. If you're reading this and would like to talk to me about my faith, feel free to reach out. However, if your intention is to get into some sort of debate with me, I unfortunately cannot be bothered. <a href="#ref2" title="Jump back to footnote 2 in the text.">&#8617;</a></sup>
+<sup id="fn2"><sup>&dagger;</sup> As a Christian, my life is built upon faith in Jesus Christ, whose love for me leads and motivates me to show the same love to others. Practically speaking, while I'm certainly still growing in this, I seek to treat everyone with compassion, empathy, and dignity, without exception. If you're reading this and would like to talk to me about my faith, feel free to reach out; I'm always happy to talk about Jesus! However, if your intention is to get into some sort of debate with me, I unfortunately am not interested. <a href="#ref2" title="Jump back to footnote 2 in the text.">&#8617;</a></sup>
 
 <p>
 Last modified: <span id="datechanged">... I don't know - maybe javascript is not enabled</span>.
