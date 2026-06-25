@@ -29,3 +29,46 @@ h1 {
   margin: 0 auto;
   width: 700px;
 }
+
+/* Verse tooltip styling */
+#verse-link {
+    position: relative;
+    display: inline-block;
+}
+
+#verse-link:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 125%;
+    left: 0;               /* ← CHANGED from 50% */
+    transform: none;       /* ← REMOVED the transform */
+    background: #222;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 200px;
+    max-width: 1000px;      /* ← You can set this to whatever */
+    white-space: normal;
+    word-wrap: break-word;
+    font-style: normal;
+    font-weight: normal;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    z-index: 100;
+    pointer-events: none;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* Small arrow/triangle at bottom of tooltip */
+#verse-link:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #222;
+    z-index: 100;
+    pointer-events: none;
+}
